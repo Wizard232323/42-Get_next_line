@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ekoubbi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/24 17:40:42 by ekoubbi           #+#    #+#             */
-/*   Updated: 2023/11/25 18:06:08 by ekoubbi          ###   ########.fr       */
+/*   Created: 2023/11/25 18:08:13 by ekoubbi           #+#    #+#             */
+/*   Updated: 2023/11/25 18:28:49 by ekoubbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*ft_read_file(int fd, char *result)
 {
@@ -88,16 +88,16 @@ char	*ft_next_line(char *result, char *returned_line)
 
 char	*get_next_line(int fd)
 {
-	static char	*result = NULL;
+	static char	*result[257];
 	char		*returned_line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || fd > 256)
 		return (0);
-	result = ft_read_file(fd, result);
-	if (result == NULL || result[0] == '\0')
+	result[fd] = ft_read_file(fd, result[fd]);
+	if (result[fd] == NULL || result[fd][0] == '\0')
 		return (NULL);
-	returned_line = ft_returned_line(result);
-	result = ft_next_line(result, returned_line);
+	returned_line = ft_returned_line(result[fd]);
+	result[fd] = ft_next_line(result[fd], returned_line);
 	return (returned_line);
 }
 

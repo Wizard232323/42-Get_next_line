@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ekoubbi <ekoubbi@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ekoubbi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/20 17:41:15 by ekoubbi           #+#    #+#             */
-/*   Updated: 2023/11/25 00:48:29 by ekoubbi          ###   ########.fr       */
+/*   Created: 2023/11/25 18:15:26 by ekoubbi           #+#    #+#             */
+/*   Updated: 2023/11/25 18:15:30 by ekoubbi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 500
